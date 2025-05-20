@@ -10,23 +10,9 @@ paginate: true
 
 # Result 型、自前で書くか、ライブラリ使うか
 
-<!-- ---
-
-## 突然ですが
-
 ---
 
-## ![bg fit](../images/i_neverthorow_you.png)
-
----
-
-## 師の教え
-
-![center fit](../images//suberi-hiyaase.png) -->
-
----
-
-![bg right](../images/majimaccho_caddi.png)
+![bg right](./images/majimaccho_caddi.png)
 
 ## 自己紹介
 
@@ -41,12 +27,12 @@ Twitter（現 X）: @majimaccho\_
 ## こんなお困りありませんか？
 
 1. TypeScript で try-catchしたらunknown型になって辛い
-2. TSKaigiでResult型がいいって聞いたけどどのライブラリを使えばいいかわからない
+2. TSKaigiでResult型がいいらしいけどどのライブラリを使えばいいの？
 3. 自前でも実装できそうだけど何がダメかわからない
 
 ---
 
-# 結論：そういう人は自前で十分n
+# 結論：そういう人は自前で十分
 
 ---
 
@@ -83,7 +69,7 @@ type CreateHoge = (x: string) => Result<Hoge, HogeError>;
 
 ## Railway Oriented Programmingはできない
 
-![bg right:40% fit](../images//dmmf-rop.png)
+![bg right:40% fit](./images//dmmf-rop.png)
 
 - 関数型ドメインモデリングで紹介されている考え方
 - Result 型を返す関数をメソッドチェーンで連結していく
