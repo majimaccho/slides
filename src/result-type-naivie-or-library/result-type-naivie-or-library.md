@@ -10,6 +10,9 @@ paginate: true
 
 # Result 型、自前で書くか、ライブラリ使うか
 
+## @TSKaigi2025
+
+
 ---
 
 ![bg right](./images/majimaccho_caddi.png)
@@ -20,7 +23,7 @@ paginate: true
 お仕事: @caddi
 職種: Web App Engineer
 
-Twitter（現 X）: @majimaccho\_
+X: @majimaccho\_
 
 ---
 
