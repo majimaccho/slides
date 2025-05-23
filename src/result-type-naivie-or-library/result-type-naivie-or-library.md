@@ -24,6 +24,26 @@ Twitter（現 X）: @majimaccho\_
 
 ---
 
+# TypeScriptのResult型のこと、気になりませんか？
+
+--- 
+
+![tskaig-session-1](./images/tskaig-session-1.png)
+
+
+---
+
+TSKaigi2024でも2025でも
+2人以上Result型の話をしている
+（今回は私も含めると3人）
+
+
+---
+
+# TypeScriptのResult型のこと、気になる！
+
+--- 
+
 ## こんなお困りありませんか？
 
 1. TypeScript で try-catchしたらunknown型になって辛い
@@ -32,14 +52,15 @@ Twitter（現 X）: @majimaccho\_
 
 ---
 
-# 結論：そういう人は自前で十分
+# 結論： ライブラリを使わなくても大丈夫
+（使うなとは言ってない）
 
 ---
 
-## 言わずと知れたTypeScript のエラーハンドリング
+## 言わずと知れたTypeScript のエラーハンドリング🤯
 
-- try-catchでcatchしたエラーは unknown 型
-- try-catch するモデルはどの関数でエラーが起こりうるか暗黙的になりやすい
+- try-catchでcatchしたエラーは unknown 型 😇
+- try-catch するモデルはどの関数でエラーが起こりうるか暗黙的になる 🤦
 
 ---
 
@@ -48,7 +69,8 @@ Twitter（現 X）: @majimaccho\_
 ```ts
 type Result<T, E> = 
 | { isOk: true; value: T } 
-| { isOk: error: E };
+| { isOk: error: E, message: string };
+
 
 type CreateHoge = (x: string) => Result<Hoge, HogeError>;
 ```
@@ -123,6 +145,7 @@ Railway Oriented Programming をしたければこれらが必要
 - **Adapterコードが増える**
   - ROPの宿命
   - ライブラリのフォーマットに合わせる必要があることもある
+- **AIが期待通りにコードを書いてくれない**（らしい）
 
 ---
 
@@ -135,6 +158,7 @@ Railway Oriented Programming をしたければこれらが必要
 - 自分たちが使いやすい型にできる
 - 自分のプロジェクトに必要なものだけを実装できる
 - メソッドチェーンしないためAdapterのコードは少ない
+- AI が期待通りにコードを書いてくれやすい
 
 ### デメリット
 
@@ -143,16 +167,9 @@ Railway Oriented Programming をしたければこれらが必要
 
 ---
 
-## まとめ
-| | **学習コスト** | **追加の依存** | **エラーハンドリングの強制力** | **メソッドチェーン** | **エラー合成のしやすさ** |
-| --- | --- | --- | --- | --- | --- |
-| **自前実装**    | ⭕️ 低い | ⭕️ ない| ❌ ない | ❌ 非対応 | ❌ 愚直に実装 |
-| **ライブラリ利用** | ❌ 高い | ❌ ある | ⭕️ 型レベルで強制 | ⭕️ 可能 | ⭕️ 簡潔 |
-
----
-
 ## 結論・どちらを使うか：
 
 - チームのライブラリ・関数型プログラミングの習熟度によって異なる
 - プロジェクト全体でRailway Oriented Programming をするならライブラリを使うのが良い
 - 手続型的に書いている中に Result 型を組み込むのであれば必要な箇所だけ自前で実装するのが良い
+- 現環境のAIエージェントでは期待通りにコードを書いてくれないかも
