@@ -11,5 +11,5 @@ brew install marp-cli
 ## build
 
 ```bash
-marp src/**/*.md --pdf
+marp src/**/*.md --pdf --allow-local-files
 ```
