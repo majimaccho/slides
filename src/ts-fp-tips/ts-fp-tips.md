@@ -154,7 +154,9 @@ const sendEmail = async (
 
 ---
 
-## Parse, don’t validate (バリデーションするな、パースせよ)
+# Parse, don’t validate
+
+# (バリデーションするな、パースせよ)
 
 - 外界からの信頼できない入力は可能な限り外側の層で信頼可能な値に Parse する
 - Unvalidated（未検証）と Validated（検証済）明確に型レベルで区別する
@@ -303,7 +305,7 @@ const parseEmail = (
 
 ---
 
-# じゃあ段階的に取り入れましょう 😺
+# それなら段階的に取り入れましょう 😺
 
 ---
 
@@ -325,6 +327,10 @@ const parseEmail = (
 - Parse, don't validate 自体は関数型コミュニティでのスローガンだが、コアとなる考え方は Always Valid Domain Model / セキュアバイデザインに近い
 - クラス指向的な設計であっても取り入れやすいし部分的にも適用可能
 - クラスを使わない表現や Result 型は統一感がないと混乱を招きやすい
+
+---
+
+![bg fit](./images/hiring.png)
 
 ---
 
