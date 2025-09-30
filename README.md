@@ -8,6 +8,16 @@ majimaccho's slides build with [marp](https://marp.app/)
 brew install marp-cli
 ```
 
+## Create a new slide
+
+```bash
+sh ./bin/bootstrap.sh <your-slide-name>
+```
+
+## Preview
+
+https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode
+
 ## build
 
 ### PDF
